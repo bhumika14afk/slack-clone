@@ -9,16 +9,16 @@ import {
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import { FcGoogle } from "react-icons/fc";
-
+import { FaGithub } from "react-icons/fa";
 export const SignInCard = () => {
   return (
     <Card className="w-full h-full p-8">
       <CardHeader className="px-0 pt-0">
         <CardTitle>Login To Continue</CardTitle>
+        <CardDescription>
+          Use your email or other service to continue
+        </CardDescription>
       </CardHeader>
-      <CardDescription>
-        Use your email or other service to continue
-      </CardDescription>
       <CardContent className="space-y-5 px-0 pb-0">
         <form className="space-y-2.5">
           <Input
@@ -50,10 +50,26 @@ export const SignInCard = () => {
             className="w-full relative"
             onClick={() => {}}
           >
-            <FcGoogle className="size-5 absolute top-2.5 left-2.5" />
+            <FcGoogle className="size-5 absolute top-3 left-2.5" />
             Continue with Google
           </Button>
+          <Button
+            disabled={false}
+            variant="outline"
+            size="lg"
+            className="w-full relative"
+            onClick={() => {}}
+          >
+            <FaGithub className="size-5 absolute top-3 left-2.5" />
+            Continue with Github
+          </Button>
         </div>
+        <p className="text-xs text-muted-foreground">
+          Don&apos;t have an account?{" "}
+          <span className="text-sky-700 hover:underline cursor-pointer">
+            Sign up
+          </span>
+        </p>
       </CardContent>
     </Card>
   );
